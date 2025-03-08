@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Área de Vídeos Privada</title>
+    <script type="module" src="app.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #181818;
+            color: #fff;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #202020;
+            padding: 15px;
+            text-align: center;
+            font-size: 24px;
+            font-weight: bold;
+        }
+        #login, #content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin-top: 50px;
+        }
+        input, button {
+            margin: 10px;
+            padding: 10px;
+            font-size: 16px;
+            border-radius: 5px;
+            border: none;
+        }
+        input {
+            background-color: #303030;
+            color: white;
+        }
+        button {
+            background-color: #ff0000;
+            color: white;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #cc0000;
+        }
+        #videoContainer {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        video {
+            width: 320px;
+            height: 180px;
+            margin: 10px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        Catarina`s YouTube 
+    </header>
+    
+    <div id="login">
+        <p>Digite seu nickname para acessar:</p>
+        <input type="password" id="password" placeholder="Senha">
+        <button onclick="checkPassword()">Entrar</button>
+    </div>
+
+    <div id="content" style="display: none;">
+        <input type="file" id="uploadInput" accept="video/*">
+        <button id="uploadBtn">Enviar Vídeo</button>
+        <h2>Vídeos Enviados</h2>
+        <div id="videoContainer"></div>
+    </div>
+</body>
+</html>
