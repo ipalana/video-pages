@@ -1,13 +1,13 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.4.0/firebase-app.js";
 import { getStorage, ref, listAll, getDownloadURL } from "https://www.gstatic.com/firebasejs/10.4.0/firebase-storage.js";
 
-const GITHUB_USER = "SEU_USUARIO_GITHUB";
-const REPO_NAME = "meus-videos";
+const GITHUB_USER = "ipalana";
+const REPO_NAME = "video-pages";
 const VIDEO_FOLDER = "videos";
 
 function checkPassword() {
     var password = document.getElementById("password").value;
-    if (password === "minhasenha123") {
+    if (password === "catarina") {
         document.getElementById("login").style.display = "none";
         document.getElementById("content").style.display = "block";
         loadVideos();
