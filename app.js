@@ -6,15 +6,23 @@ const REPO_NAME = "video-pages";
 const VIDEO_FOLDER = "videos";
 
 function checkPassword() {
-    var password = document.getElementById("password").value;
-    if (password === "catarina") {
-        document.getElementById("login").style.display = "none";
-        document.getElementById("content").style.display = "block";
-        loadVideos();
-    } else {
-        alert("Senha incorreta!");
-    }
-}
+document.addEventListener("DOMContentLoaded", function () {
+    // 🔹 Definição da senha correta
+    const senhaCorreta = "catarina";
+
+    // 🔹 Adiciona o evento de clique ao botão "Entrar"
+    document.getElementById("loginButton").addEventListener("click", function () {
+        var password = document.getElementById("password").value;
+        if (password === senhaCorreta) {
+            document.getElementById("login").style.display = "none";
+            document.getElementById("content").style.display = "block";
+            loadVideos(); // 🔹 Carrega os vídeos após login
+        } else {
+            alert("Senha incorreta! Tente novamente.");
+        }
+    });
+});
+
 
 async function loadVideos() {
     const videoContainer = document.getElementById("videoCarousel");
@@ -60,3 +68,4 @@ async function loadVideos() {
         videoContainer.innerHTML = "<p>Não foi possível carregar os vídeos.</p>";
     }
 }
+
